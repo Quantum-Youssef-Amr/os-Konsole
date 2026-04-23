@@ -1,8 +1,8 @@
 # Makefile for myShell
 CC = gcc                                      # C compiler to use
 CFLAGS = -Wall -Wextra -std=c99              # Compiler flags (warnings + C99 standard)
-TARGET = myShell                              # Name of executable to produce
-SRCS = myShell.c                              # Source file to compile
+TARGET = myKonsole                              # Name of executable to produce
+SRCS = myKonsole.c                              # Source file to compile
 
 all: $(TARGET)                                # Default target builds executable
 

@@ -58,15 +58,15 @@ void show_history(void)
     }
 }
 
-// Persists command history to .myshell_history file in user's home directory
+// Persists command history to .myKonsole_history file in user's home directory
 void save_history(void)
 {
     char *home = getenv("HOME"); // Get home directory path
     if (home == NULL)
         return; // Exit if HOME not set
 
-    char path[512];                                            // Buffer for full file path
-    snprintf(path, sizeof(path), "%s/.myshell_history", home); // Build history file path
+    char path[512];                                              // Buffer for full file path
+    snprintf(path, sizeof(path), "%s/.myKonsole_history", home); // Build history file path
 
     FILE *file = fopen(path, "w"); // Open file for writing
     if (file == NULL)
@@ -88,8 +88,8 @@ void load_history(void)
     if (home == NULL)
         return; // Exit if HOME not set
 
-    char path[512];                                            // Buffer for full file path
-    snprintf(path, sizeof(path), "%s/.myshell_history", home); // Build history file path
+    char path[512];                                              // Buffer for full file path
+    snprintf(path, sizeof(path), "%s/.myKonsole_history", home); // Build history file path
 
     FILE *file = fopen(path, "r"); // Open file for reading
     if (file == NULL)
@@ -112,8 +112,8 @@ void load_history(void)
 // Reads a single line of input from the user and displays the prompt
 void read_command(char *input)
 {
-    printf("myShell> "); // Display shell prompt
-    fflush(stdout);      // Force prompt to appear
+    printf("myKonsole> "); // Display shell prompt
+    fflush(stdout);        // Force prompt to appear
 
     if (fgets(input, MAX_INPUT, stdin) == NULL)
     {                 // Read user input
